@@ -8,6 +8,19 @@ let a = (1 + 2, 3 + 4);
 
 alert( a ); // 7 (the result of 3 + 4)
 
+
+const array = [
+    'Ben',
+    'John',
+    'Will',
+    'Bob',
+    'James',
+    'Kate',
+    'Miranda'
+
+]
+const FilteredArray = array.filter((item) => typeof(item)===String)
+ console.log(FilteredArray);
 // -if variable = 0;
 // and we say: ++variable and variable++ and we output both of them with alert(value) they both show 1.
 // -but if we assign them to a new variable such as:
