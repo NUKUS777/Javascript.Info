@@ -5,9 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <script src="./index.js">
+<style>
+    body {
+        padding: 0 100px;
+        min-height: 100vh;
+        overflow-y: scroll;
 
+    }
+</style>
+<body>
+    <h1 class="test"></h1>
+    <h1>Loops: while and for    </h1>
+    <h2>While</h2>
+    <p>let i = 3;
+        while (i) { // when i becomes 0, the condition becomes falsy, and the loop stops
+          alert( i );
+          i--;
+        }</p>
+    <h2>Do... While</h2>
+    <p>
+        This form of syntax should only be used when you want the body of the loop to execute at least once regardless of the condition being truthy. Usually, the other form is preferred: while(…) {…}.
+    </p>
+    <h2>
+        The “for” loop
+    </h2>
+    <p>
+        for (begin; condition; step) {
+            // ... loop body ...
+          }
+     <br />
+        begin	let i = 0	Executes once upon entering the loop.     <br />
+        condition	i < 3	Checked before every loop iteration. If false, the loop stops.     <br />
+        body	alert(i)	Runs again and again while the condition is truthy.     <br />
+        step	i++	Executes after the body on each iteration.     <br />
+    </p>
+    <h3>Breaking Loop</h3>
+    <p>let sum = 0;
+
+        while (true) {
+        
+          let value = +prompt("Enter a number", '');
+        
+          if (!value) break; // (*)
+        
+          sum += value;
+        
+        }
+        alert( 'Sum: ' + sum );</p>
+
+        <h4>while – The condition is checked before each iteration.
+            do..while – The condition is checked after each iteration.
+            for (;;) – The condition is checked before each iteration, additional settings available.</h4>
+
+
+    
+        <h1>Switch statement</h1>
+        <p>A switch statement can replace multiple if checks.
+
+            It gives a more descriptive way to compare a value with multiple variants.</p>
+    <script src="./index.js">
     </script>
 </body>
 </html>
