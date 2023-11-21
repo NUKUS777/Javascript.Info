@@ -1,1 +1,4 @@
-//logical operators
+//functions 
+function Test(params) {
+  
+}
