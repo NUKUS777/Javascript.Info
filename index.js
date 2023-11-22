@@ -63,3 +63,78 @@ function showMessage() {
 showMessage();
 
 alert( user2 ); // John, unchanged, the function did not access the outer variable
+
+
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    return confirm('Did parents allow you?');
+  }
+}
+// ? ||
+
+function nam(age) {
+  return age>18 || confirm('Did parents allow you?')
+}
+console.log(nam(19));
+
+
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+function showOk() {
+  alert( "You agreed." );
+}
+
+function showCancel() {
+  alert( "You canceled the execution." );
+}
+
+// usage: functions showOk, showCancel are passed as arguments to ask
+ask("Do you agree?", showOk, showCancel);
+
+
+
+//shorter version
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+);
+
+
+
+//Arrow functions
+
+
+
+//Arrow functions can be used in the same way as Function Expressions.
+
+//For instance, to dynamically create a function:
+let age = prompt("What is your age?", 18);
+
+let welcome = (age < 18) ?
+  () => alert('Hello!') :
+  () => alert("Greetings!");
+
+welcome();
+
+
+function ask(question, yes, no) {
+  if (confirm(question)) yes();
+  else no();
+}
+
+ask(
+  "Do you agree?",
+   () => { alert("You agreed."); },
+   () => { alert("You canceled the execution."); }
+);
