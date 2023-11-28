@@ -1,60 +1,60 @@
-//object
+object
 
 
-//Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.
+Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.
 
-//Should work like that:
+Should work like that:
 
-// let schedule = {};
+let schedule = {};
 
-// function isEmpty(obj) {
-//     for (const key in obj) {
-//         return false
-//     }
-//     return true
-// }
-
-
-// alert( isEmpty(schedule) ); // true
-
-// schedule["8:30"] = "get up";
-
-// alert( isEmpty(schedule) ); // false
+function isEmpty(obj) {
+    for (const key in obj) {
+        return false
+    }
+    return true
+}
 
 
+alert( isEmpty(schedule) ); // true
 
-////this property
-// let calculator = {
-//    sum() {
-//     return this.a + this.b
-//    },
-//    mul() {
-//     return this.a*this.b
-//    },
-//    read() {
-//     this.a = +prompt('a?',0);
-//     this.b = +prompt('b?',0);
+schedule["8:30"] = "get up";
 
-//    }
+alert( isEmpty(schedule) ); // false
 
-//   };
+
+
+//this property
+let calculator = {
+   sum() {
+    return this.a + this.b
+   },
+   mul() {
+    return this.a*this.b
+   },
+   read() {
+    this.a = +prompt('a?',0);
+    this.b = +prompt('b?',0);
+
+   }
+
+  };
   
-//   calculator.read();
-//   alert( calculator.sum() );
-//   alert( calculator.mul() );
-// let user = {
-//    name: "John",
-//    age: 30,
+  calculator.read();
+  alert( calculator.sum() );
+  alert( calculator.mul() );
+let user = {
+   name: "John",
+   age: 30,
  
-//    sayHi() {
-//      // "this" is the "current object"
-//      name: "Dave",
-//      alert(this.name);
-//    }
+   sayHi() {
+     // "this" is the "current object"
+     name: "Dave",
+     alert(this.name);
+   }
  
-//  };
+ };
  
-//  user.sayHi(); // John
+ user.sayHi(); // John
 
 
 let calculator =  {
@@ -115,3 +115,36 @@ User?.name = "John"; // Error, doesn't work
 // because it evaluates to: undefined = "John"
 
 
+//Symbols
+
+
+global scope
+
+
+var GlobalVar = 32;
+
+//function scope
+function Example(params) {
+    var LocalVar= 20;
+    console.log(LocalVar)//20
+}
+
+//block scope
+
+if (true) {
+    const localConst = 22;
+}
+
+// console.log(localConst);
+
+//scope chain
+
+
+var outerVar = 40;
+
+function outerFunction() {
+  var innerVar = 50;
+  console.log(outerVar); // Accessible in inner scope
+}
+
+console.log(innerVar); // Error: innerVar is not defined
