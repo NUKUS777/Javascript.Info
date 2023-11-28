@@ -18,6 +18,31 @@
         A chain of ?. allows to safely access nested properties.
         
         Still, we should apply ?. carefully, only where it’s acceptable, according to our code logic, that the left part doesn’t exist. So that it won’t hide programming errors from us, if they occur.</h2>
+
+
+        <h1>Symbols</h1>
+        <h2>By specification, only two primitive types may serve as object property keys:
+
+            string type, or
+            symbol type.
+            Otherwise, if one uses another type, such as number, it’s autoconverted to string. So that obj[1] is the same as obj["1"], and obj[true] is the same as obj["true"].
+            
+            Until now we’ve been using only strings.
+            
+            Now let’s explore symbols, see what they can do for us.
+            
+            Symbols
+            A “symbol” represents a unique identifier.
+            
+            A value of this type can be created using Symbol():</h2>
+            <p>
+                Most values in JavaScript support implicit conversion to a string. For instance, we can alert almost any value, and it will work. Symbols are special. They don’t auto-convert.
+
+For instance, this alert will show an error:
+
+let id = Symbol("id");
+alert(id); // TypeError: Cannot convert a Symbol value to a string
+            </p>
     <script src="./index.js">
     </script>
 </body>
